@@ -1,0 +1,23 @@
+<html>
+
+<head>
+<title>MongoDB Daily Report</title>
+<STYLE type="text/css">
+	h1 {font-family:SegoeUI, sans-serif; font-size:20}
+	th {font-family:SegoeUI, sans-serif; font-size:15}
+	td {font-family:Consolas, sans-serif; font-size:12}
+</STYLE>
+</head>
+
+<body>
+<h1>Connections Report</h1>
+<table>
+        <tr><td><image src="cid:Connections"></td></tr>
+	<tr><td><br/><br/><br/></td></tr>
+	<tr><td><image src="http://c.dx.com/banner/201508/20150818/10yr_dxman_logo.gif" 
+
+/></td></tr>
+</table>
+</body>
+
+</html>
