@@ -564,6 +564,7 @@ function Send-MailMessage
     {
         try
         {
+            #[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { return $true }
             $_smtpClient.Send($_message)
         }
         catch
