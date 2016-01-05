@@ -30,7 +30,10 @@ try
 }
 catch
 {
-    Write-ErrorLog $log
+    $ErrorInfo = "`r`n############## $(Get-Date -uFormat '%Y-%m-%d %T') ##############`r`n"
+    $ErrorInfo = $ErrorInfo + "############## Error: Analyze MongoDB Log ##############`r`n"
+    $ErrorInfo = $ErrorInfo + $_.Exception.Message
+    $ErrorInfo | Out-File -FilePath $log -Append
 }
 
 # Send E-Mail
@@ -60,7 +63,7 @@ $params = @{
     SmtpServer = 'mail.comepro.com' 
     Port = 25 
     Credential = $credential
-    UseSsl = $true 
+    #UseSsl = $true 
 } 
 
 try
@@ -69,5 +72,8 @@ try
 }
 catch
 {
-    Write-ErrorLog $log
+    $ErrorInfo = "`r`n############## $(Get-Date -uFormat '%Y-%m-%d %T') ##############`r`n"
+    $ErrorInfo = $ErrorInfo + "############## Error: Send E-Mail ##############`r`n"
+    $ErrorInfo = $ErrorInfo + $_.Exception.Message
+    $ErrorInfo | Out-File -FilePath $log -Append
 }
